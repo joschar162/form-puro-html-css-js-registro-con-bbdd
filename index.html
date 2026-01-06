@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Pre-lista de Residentes - Huaylia Bajada de Reyes</title>
+    <link
+      rel="stylesheet"
+      href="./styles/style.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="perfil-container">
+          <img
+            width="250"
+            src="./img/img.png"
+            alt="imagen de huaylia"
+          />
+        </div>
+        <h1>
+          Pre-lista de residentes de Vito en Abancay para la huaylia de bajada
+          de reyes
+        </h1>
+      </header>
+      <!--
+      <div class="card">
+        <h2>📝 Formulario de Registro</h2>
+
+        <div
+          id="alert-error"
+          class="alert alert-error"
+        ></div>
+        <div
+          id="alert-success"
+          class="alert alert-success"
+        ></div>
+        <div
+          id="alert-info"
+          class="alert alert-info"
+        ></div>
+        <div
+          id="alert-warning"
+          class="alert alert-warning"
+        ></div>
+
+        <form id="registration-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="nombre">Nombre *</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ingrese el nombre"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="apellido_paterno">Apellido Paterno *</label>
+              <input
+                type="text"
+                id="apellido_paterno"
+                name="apellido_paterno"
+                placeholder="Ingrese el apellido paterno"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="apellido_materno">Apellido Materno *</label>
+              <input
+                type="text"
+                id="apellido_materno"
+                name="apellido_materno"
+                placeholder="Ingrese el apellido materno"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="celular">Número de Celular *</label>
+              <input
+                type="tel"
+                id="celular"
+                name="celular"
+                placeholder="Ingrese el número de celular"
+                maxlength="9"
+                pattern="[0-9]{9}"
+                required
+              />
+            </div>
+
+            <div class="form-group full-width">
+              <label for="genero">Género *</label>
+              <select
+                id="genero"
+                name="genero"
+                required
+              >
+                <option value="">Seleccione el género</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="codigo_acceso">Código de Acceso (4 dígitos) *</label>
+              <div class="password-toggle">
+                <input
+                  type="password"
+                  id="codigo_acceso"
+                  name="codigo_acceso"
+                  placeholder="Ingrese un código de 4 dígitos"
+                  maxlength="4"
+                  pattern="[0-9]{4}"
+                  required
+                />
+                <button
+                  type="button"
+                  onclick="togglePassword('codigo_acceso', this)"
+                >
+                  👁️
+                </button>
+              </div>
+              <small
+                style="
+                  color: #6b7280;
+                  font-size: 0.85rem;
+                  display: block;
+                  margin-top: 8px;
+                "
+              >
+                ⚠️ Guarde este código, lo necesitará para editar su registro
+                posteriormente
+              </small>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-closed"
+            id="submit-btn"
+          >
+            Registrarse
+          </button>
+        </form>
+      </div>
+      
+      <div class="card">
+        <h2>📋 Lista de Inscritos</h2>
+
+        <div class="stats">
+          Total de registrados:
+          <span id="total-registrados">0</span>
+          residente(s)
+        </div>
+        
+        <button
+          id="btnExportar"
+          class="btn-excel"
+        >
+          Descargar Excel
+        </button> 
+      
+
+        <div
+          id="alert-duplicate"
+          class="alert alert-error"
+        ></div>
+
+        <div class="table-container">
+          <table id="registrados-table">
+            <thead>
+              <tr>
+                <th>Nombre Completo</th>
+                <th>Celular</th>
+                <th>Género</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="registrados-body"></tbody>
+          </table>
+
+          <div
+            id="empty-state"
+            class="empty-state"
+          >
+            <div class="empty-state-icon">👥</div>
+            <p>Aún no hay residentes registrados.</p>
+            <p>Sér el primero en registrarse.</p>
+          </div>
+        </div>
+      </div>
+    -->
+      <div class="card">
+        <h2>Registro cerrado</h2>
+        <h3>
+          "El registro para la pre-lista ha finalizado. Muchas gracias por su
+          interés. Para más detalles sobre la organización, por favor consulte
+          el grupo de
+          <span style="color: green">WhatsApp</span>
+          de los residentes de Vito en Abancay."
+        </h3>
+      </div>
+      <footer
+        style="
+          text-align: center;
+          padding: 20px;
+          color: white;
+          font-size: 0.9rem;
+        "
+      >
+        <p>© 2026 - Huaylia de Bajada de Reyes - Vito, Abancay</p>
+        <p>© 2026 - Todo los derechos reservados - José Chaqquere Rea</p>
+      </footer>
+    </div>
+
+    <!-- Modal de Verificación para Editar -->
+    <div
+      id="modal-verificacion"
+      class="modal-overlay"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="icon">🔐</div>
+          <h3>Verificación de Identidad</h3>
+          <p>
+            Para editar este registro, ingrese el código de acceso de 4 dígitos
+            que definió al registrarse.
+          </p>
+        </div>
+
+        <div class="code-input-container">
+          <input
+            type="password"
+            class="code-input"
+            maxlength="1"
+            data-index="0"
+          />
+          <input
+            type="password"
+            class="code-input"
+            maxlength="1"
+            data-index="1"
+          />
+          <input
+            type="password"
+            class="code-input"
+            maxlength="1"
+            data-index="2"
+          />
+          <input
+            type="password"
+            class="code-input"
+            maxlength="1"
+            data-index="3"
+          />
+        </div>
+
+        <div
+          id="modal-error"
+          class="modal-alert"
+        ></div>
+
+        <div class="modal-buttons">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="cancelarVerificacion()"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="confirmarVerificacion()"
+          >
+            Verificar
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+
+    <script>
+      // Estos datos te los da Firebase al crear el app web en su consola
+      const firebaseConfig = {
+        apiKey: "AIzaSyBFBnWOxmK4g0OYFskhHyEHyp7RCvLZKYs",
+        authDomain: "registro-huaylia.firebaseapp.com",
+        databaseURL: "https://registro-huaylia-default-rtdb.firebaseio.com",
+        projectId: "registro-huaylia",
+        storageBucket: "registro-huaylia.firebasestorage.app",
+        messagingSenderId: "79054375624",
+        appId: "1:79054375624:web:b5de5f1bd023b413c2f3fd",
+        measurementId: "G-8LRVYJNWL1",
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.database();
+    </script>
+    <!-- <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
