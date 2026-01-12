@@ -191,6 +191,7 @@ function renderizarTabla() {
                         )}</strong></td>
                         <td>${registro.celular}</td>
                         <td>${obtenerBadgeGenero(registro.genero)}</td>
+                        <td>${registro.dni}</td>
                         <td>
                             <button class="btn-edit" onclick="solicitarVerificacion('${
                               registro.id
@@ -288,6 +289,7 @@ function editarRegistro(id) {
   document.getElementById("apellido_paterno").value = registro.apellidoPaterno;
   document.getElementById("apellido_materno").value = registro.apellidoMaterno;
   document.getElementById("celular").value = registro.celular;
+  document.getElementById("dni").value = registro.dni;
   document.getElementById("genero").value = registro.genero;
   document.getElementById("codigo_acceso").value = registro.codigoAcceso;
 
@@ -332,6 +334,7 @@ form.addEventListener("submit", function (e) {
     .getElementById("apellido_materno")
     .value.trim();
   const celular = document.getElementById("celular").value.trim();
+  const dni = document.getElementById("dni").value.trim();
   const genero = document.getElementById("genero").value;
   const codigoAcceso = document.getElementById("codigo_acceso").value;
 
@@ -341,6 +344,7 @@ form.addEventListener("submit", function (e) {
     !apellidoPaterno ||
     !apellidoMaterno ||
     !celular ||
+    !dni ||
     !genero ||
     !codigoAcceso
   ) {
@@ -356,6 +360,14 @@ form.addEventListener("submit", function (e) {
     mostrarAlerta(
       "error",
       "El número de celular debe tener exactamente 9 dígitos y empezar con 9."
+    );
+    return;
+  }
+  // Validar formato de DNI (8 dígitos para Perú)
+  if (!/^\d{8}$/.test(dni)) {
+    mostrarAlerta(
+      "error",
+      "El número de DNI debe tener exactamente 8 dígitos."
     );
     return;
   }
@@ -393,6 +405,7 @@ form.addEventListener("submit", function (e) {
         apellidoPaterno,
         apellidoMaterno,
         celular,
+        dni,
         genero,
         codigoAcceso,
       })
@@ -407,6 +420,7 @@ form.addEventListener("submit", function (e) {
       apellidoPaterno,
       apellidoMaterno,
       celular,
+      dni,
       genero,
       codigoAcceso,
     };

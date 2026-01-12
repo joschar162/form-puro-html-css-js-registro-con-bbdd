@@ -90,7 +90,19 @@
               />
             </div>
 
-            <div class="form-group full-width">
+            <div class="form-group">
+              <label for="dni">DNI: *</label>
+              <input
+                type="number"
+                id="dni"
+                name="dni"
+                placeholder="Ingrese el número de DNI"
+                maxlength="8"
+                pattern="[0-9]{8}"
+                required
+              />
+            </div>
+            <div class="form-group">
               <label for="genero">Género *</label>
               <select
                 id="genero"
@@ -174,6 +186,7 @@
                 <th>Nombre Completo</th>
                 <th>Celular</th>
                 <th>Género</th>
+                <th>DNI</th>
                 <th>Acciones</th>
               </tr>
             </thead>
