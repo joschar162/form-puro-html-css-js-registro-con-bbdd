@@ -21,23 +21,35 @@ const codeInputs = document.querySelectorAll(".code-input");
 
 // Cargar registros desde localStorage al iniciar
 function inicializar() {
-  // Escuchar cambios en tiempo real desde Firebase
-  db.ref("inscritos").on("value", (snapshot) => {
-    const data = snapshot.val();
+  console.log("Intentando conectar a Firebase...");
 
-    // Convertir el objeto de Firebase a un array para tu tabla
-    if (data) {
-      registros = Object.keys(data).map((key) => ({
-        id: key,
-        ...data[key],
-      }));
-    } else {
-      registros = [];
+  // Referencia con manejo de error para diagnosticar la URL
+  const inscritosRef = db.ref("inscritos");
+
+  inscritosRef.on(
+    "value",
+    (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        registros = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+      } else {
+        registros = [];
+      }
+      renderizarTabla();
+      console.log("Datos sincronizados con Firebase");
+    },
+    (error) => {
+      // Si la URL está mal, este mensaje aparecerá en la consola
+      console.error("Error de conexión detectado:", error.message);
+      mostrarAlerta(
+        "error",
+        "Error de conexión con la base de datos. Verifica la configuración."
+      );
     }
-
-    renderizarTabla();
-    console.log("Datos sincronizados con Firebase");
-  });
+  );
 }
 
 // Generar ID único
