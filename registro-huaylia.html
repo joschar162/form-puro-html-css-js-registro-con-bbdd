@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Inscripción de socios</title>
+    <title>Pre-lista de Residentes - Huaylia Bajada de Reyes</title>
     <link
       rel="stylesheet"
       href="./styles/style.css"
@@ -16,12 +16,19 @@
   <body>
     <div class="container">
       <header class="header">
-        <h2>
-          Inscripción de Socios | Asociación de Residentes de Vito en Abancay
-        </h2>
-        <p></p>
+        <div class="perfil-container">
+          <img
+            width="250"
+            src="./img/img.png"
+            alt="imagen de huaylia"
+          />
+        </div>
+        <h1>
+          Pre-lista de residentes de Vito en Abancay para la huaylia de bajada
+          de reyes
+        </h1>
       </header>
-
+      <!--
       <div class="card">
         <h2>📝 Formulario de Registro</h2>
 
@@ -78,7 +85,7 @@
             </div>
 
             <div class="form-group">
-              <label for="celular">Número de Celular (WhatsApp ) *</label>
+              <label for="celular">Número de Celular *</label>
               <input
                 type="tel"
                 id="celular"
@@ -145,7 +152,7 @@
           </button>
         </form>
       </div>
-
+      
       <div class="card">
         <h2>📋 Lista de Inscritos</h2>
 
@@ -154,13 +161,14 @@
           <span id="total-registrados">0</span>
           residente(s)
         </div>
-
+        
         <button
           id="btnExportar"
           class="btn-excel"
         >
           Descargar Excel
-        </button>
+        </button> 
+      
 
         <div
           id="alert-duplicate"
@@ -190,7 +198,17 @@
           </div>
         </div>
       </div>
-
+    -->
+      <div class="card">
+        <h2>Registro cerrado</h2>
+        <h3>
+          "El registro para la pre-lista ha finalizado. Muchas gracias por su
+          interés. Para más detalles sobre la organización, por favor consulte
+          el grupo de
+          <span style="color: green">WhatsApp</span>
+          de los residentes de Vito en Abancay."
+        </h3>
+      </div>
       <footer
         style="
           text-align: center;
@@ -199,7 +217,7 @@
           font-size: 0.9rem;
         "
       >
-        <p>© 2026 - Residentes de Vito en Abancay</p>
+        <p>© 2026 - Huaylia de Bajada de Reyes - Vito, Abancay</p>
         <p>© 2026 - Todo los derechos reservados - José Chaqquere Rea</p>
       </footer>
     </div>
@@ -275,13 +293,14 @@
     <script>
       // Estos datos te los da Firebase al crear el app web en su consola
       const firebaseConfig = {
-        apiKey: "AIzaSyApkR59qOPyC-ZCcTZDHb1C0foqfqwejDs",
-        authDomain: "registro-socios-residentes.firebaseapp.com",
-        projectId: "registro-socios-residentes",
-        storageBucket: "registro-socios-residentes.firebasestorage.app",
-        messagingSenderId: "591939707310",
-        appId: "1:591939707310:web:bdc858100b3ef3c8c0683f",
-        measurementId: "G-WD9VVT8WXW",
+        apiKey: "AIzaSyBFBnWOxmK4g0OYFskhHyEHyp7RCvLZKYs",
+        authDomain: "registro-huaylia.firebaseapp.com",
+        databaseURL: "https://registro-huaylia-default-rtdb.firebaseio.com",
+        projectId: "registro-huaylia",
+        storageBucket: "registro-huaylia.firebasestorage.app",
+        messagingSenderId: "79054375624",
+        appId: "1:79054375624:web:b5de5f1bd023b413c2f3fd",
+        measurementId: "G-8LRVYJNWL1",
       };
       firebase.initializeApp(firebaseConfig);
       const db = firebase.database();

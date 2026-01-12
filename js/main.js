@@ -74,7 +74,7 @@ document.getElementById("btnExportar").addEventListener("click", () => {
 
     // Generar y descargar el archivo
     const wb = XLSX.utils.table_to_book(tablaClonada, { sheet: "Inscritos" });
-    XLSX.writeFile(wb, "Lista_Huaylia_Vito_2025.xlsx");
+    XLSX.writeFile(wb, "Lista_padron_socios.xlsx");
   } catch (error) {
     console.error("Error al exportar:", error);
   }
