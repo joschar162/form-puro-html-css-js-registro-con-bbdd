@@ -1,114 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Inscripción de socios</title>
-    <link
-      rel="stylesheet"
-      href="./styles/style.css"
-    />
-  </head>
 
-  <body>
-    <div class="container">
-      <header class="header">
-        <h2>
-          Inscripción de Socios | Asociación de Residentes de Vito en Abancay
-        </h2>
-        <p></p>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscripción de socios</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
 
+<body>
+  <div class="container">
+    <!-- visible siempre star-->
+    <header class="header">
+      <h2>
+        Inscripción de Socios | Asociación de Residentes de Vito en Abancay
+      </h2>
+      <p></p>
+    </header>
+    <!-- visible siempre end-->
+    <!-- visible si esta dentro de la fecha star -->
+    <div id="seccion-formulario">
       <div class="card">
         <h2>📝 Formulario de Registro</h2>
 
-        <div
-          id="alert-error"
-          class="alert alert-error"
-        ></div>
-        <div
-          id="alert-success"
-          class="alert alert-success"
-        ></div>
-        <div
-          id="alert-info"
-          class="alert alert-info"
-        ></div>
-        <div
-          id="alert-warning"
-          class="alert alert-warning"
-        ></div>
+        <div id="alert-error" class="alert alert-error"></div>
+        <div id="alert-success" class="alert alert-success"></div>
+        <div id="alert-info" class="alert alert-info"></div>
+        <div id="alert-warning" class="alert alert-warning"></div>
 
         <form id="registration-form">
           <div class="form-grid">
             <div class="form-group">
               <label for="nombre">Nombre *</label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Ingrese el nombre"
-                required
-              />
+              <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" required />
             </div>
 
             <div class="form-group">
               <label for="apellido_paterno">Apellido Paterno *</label>
-              <input
-                type="text"
-                id="apellido_paterno"
-                name="apellido_paterno"
-                placeholder="Ingrese el apellido paterno"
-                required
-              />
+              <input type="text" id="apellido_paterno" name="apellido_paterno" placeholder="Ingrese el apellido paterno"
+                required />
             </div>
 
             <div class="form-group">
               <label for="apellido_materno">Apellido Materno *</label>
-              <input
-                type="text"
-                id="apellido_materno"
-                name="apellido_materno"
-                placeholder="Ingrese el apellido materno"
-                required
-              />
+              <input type="text" id="apellido_materno" name="apellido_materno" placeholder="Ingrese el apellido materno"
+                required />
             </div>
 
             <div class="form-group">
               <label for="celular">Número de Celular (WhatsApp ) *</label>
-              <input
-                type="tel"
-                id="celular"
-                name="celular"
-                placeholder="Ingrese el número de celular"
-                maxlength="9"
-                pattern="[0-9]{9}"
-                required
-              />
+              <input type="tel" id="celular" name="celular" placeholder="Ingrese el número de celular" maxlength="9"
+                pattern="[0-9]{9}" required />
             </div>
 
             <div class="form-group">
               <label for="dni">DNI: *</label>
-              <input
-                type="number"
-                id="dni"
-                name="dni"
-                placeholder="Ingrese el número de DNI"
-                maxlength="8"
-                pattern="[0-9]{8}"
-                required
-              />
+              <input type="number" id="dni" name="dni" placeholder="Ingrese el número de DNI" maxlength="8"
+                pattern="[0-9]{8}" required />
             </div>
             <div class="form-group">
               <label for="genero">Género *</label>
-              <select
-                id="genero"
-                name="genero"
-                required
-              >
+              <select id="genero" name="genero" required>
                 <option value="">Seleccione el género</option>
                 <option value="masculino">Masculino</option>
                 <option value="femenino">Femenino</option>
@@ -118,41 +70,25 @@
             <div class="form-group full-width">
               <label for="codigo_acceso">Código de Acceso (4 dígitos) *</label>
               <div class="password-toggle">
-                <input
-                  type="password"
-                  id="codigo_acceso"
-                  name="codigo_acceso"
-                  placeholder="Ingrese un código de 4 dígitos"
-                  maxlength="4"
-                  pattern="[0-9]{4}"
-                  required
-                />
-                <button
-                  type="button"
-                  onclick="togglePassword('codigo_acceso', this)"
-                >
+                <input type="password" id="codigo_acceso" name="codigo_acceso"
+                  placeholder="Ingrese un código de 4 dígitos" maxlength="4" pattern="[0-9]{4}" required />
+                <button type="button" onclick="togglePassword('codigo_acceso', this)">
                   👁️
                 </button>
               </div>
-              <small
-                style="
+              <small style="
                   color: #6b7280;
                   font-size: 0.85rem;
                   display: block;
                   margin-top: 8px;
-                "
-              >
+                ">
                 ⚠️ Guarde este código, lo necesitará para editar su registro
                 posteriormente
               </small>
             </div>
           </div>
 
-          <button
-            type="submit"
-            class="btn btn-closed"
-            id="submit-btn"
-          >
+          <button type="submit" class="btn btn-closed" id="submit-btn">
             Registrarse
           </button>
         </form>
@@ -167,17 +103,11 @@
           residente(s)
         </div>
 
-        <button
-          id="btnExportar"
-          class="btn-excel"
-        >
+        <button id="btnExportar" class="btn-excel">
           Descargar Excel
         </button>
 
-        <div
-          id="alert-duplicate"
-          class="alert alert-error"
-        ></div>
+        <div id="alert-duplicate" class="alert alert-error"></div>
 
         <div class="table-container">
           <table id="registrados-table">
@@ -193,116 +123,89 @@
             <tbody id="registrados-body"></tbody>
           </table>
 
-          <div
-            id="empty-state"
-            class="empty-state"
-          >
+          <div id="empty-state" class="empty-state">
             <div class="empty-state-icon">👥</div>
             <p>Aún no hay residentes registrados.</p>
             <p>Sér el primero en registrarse.</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <footer
-        style="
+    <!-- visible si esta dentro de la fecha end -->
+    <!-- visible si no esta dentro de la fecha estart -->
+    <div id="seccion-cerrado" class="card">
+      <h2>La inscripción se encuentra cerrada</h2>
+      <p> mas información en el grupo de WhatsApp de Residentes de Vito En Abancay</p>
+    </div>
+    <!-- visible si no esta dentro de la fecha end -->
+
+    <!-- visible siempre -->
+    <footer style="
           text-align: center;
           padding: 20px;
           color: white;
           font-size: 0.9rem;
-        "
-      >
-        <p>© 2026 - Residentes de Vito en Abancay</p>
-        <p>© 2026 - Todo los derechos reservados - José Chaqquere Rea</p>
-      </footer>
-    </div>
+        ">
+      <p>© 2026 - Residentes de Vito en Abancay</p>
+      <p>© 2026 - Casi Todo los derechos reservados - José Chaqquere Rea</p>
+    </footer>
+    <!-- visible siempre end-->
+  </div>
 
-    <!-- Modal de Verificación para Editar -->
-    <div
-      id="modal-verificacion"
-      class="modal-overlay"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="icon">🔐</div>
-          <h3>Verificación de Identidad</h3>
-          <p>
-            Para editar este registro, ingrese el código de acceso de 4 dígitos
-            que definió al registrarse.
-          </p>
-        </div>
+  <!-- Modal de Verificación para Editar -->
+  <div id="modal-verificacion" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="icon">🔐</div>
+        <h3>Verificación de Identidad</h3>
+        <p>
+          Para editar este registro, ingrese el código de acceso de 4 dígitos
+          que definió al registrarse.
+        </p>
+      </div>
 
-        <div class="code-input-container">
-          <input
-            type="password"
-            class="code-input"
-            maxlength="1"
-            data-index="0"
-          />
-          <input
-            type="password"
-            class="code-input"
-            maxlength="1"
-            data-index="1"
-          />
-          <input
-            type="password"
-            class="code-input"
-            maxlength="1"
-            data-index="2"
-          />
-          <input
-            type="password"
-            class="code-input"
-            maxlength="1"
-            data-index="3"
-          />
-        </div>
+      <div class="code-input-container">
+        <input type="password" class="code-input" maxlength="1" data-index="0" />
+        <input type="password" class="code-input" maxlength="1" data-index="1" />
+        <input type="password" class="code-input" maxlength="1" data-index="2" />
+        <input type="password" class="code-input" maxlength="1" data-index="3" />
+      </div>
 
-        <div
-          id="modal-error"
-          class="modal-alert"
-        ></div>
+      <div id="modal-error" class="modal-alert"></div>
 
-        <div class="modal-buttons">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            onclick="cancelarVerificacion()"
-          >
-            Cancelar
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            onclick="confirmarVerificacion()"
-          >
-            Verificar
-          </button>
-        </div>
+      <div class="modal-buttons">
+        <button type="button" class="btn btn-secondary" onclick="cancelarVerificacion()">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-primary" onclick="confirmarVerificacion()">
+          Verificar
+        </button>
       </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 
-    <script>
-      // Estos datos te los da Firebase al crear el app web en su consola
-      const firebaseConfig = {
-        apiKey: "AIzaSyApkR59qOPyC-ZCcTZDHb1C0foqfqwejDs",
-        authDomain: "registro-socios-residentes.firebaseapp.com",
-        databaseURL:
-          "https://registro-socios-residentes-default-rtdb.firebaseio.com/",
-        projectId: "registro-socios-residentes",
-        storageBucket: "registro-socios-residentes.firebasestorage.app",
-        messagingSenderId: "591939707310",
-        appId: "1:591939707310:web:bdc858100b3ef3c8c0683f",
-        measurementId: "G-WD9VVT8WXW",
-      };
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.database();
-    </script>
-    <!-- <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="./js/main.js"></script>
-  </body>
+  <script>
+    // Estos datos te los da Firebase al crear el app web en su consola
+    const firebaseConfig = {
+      apiKey: "AIzaSyApkR59qOPyC-ZCcTZDHb1C0foqfqwejDs",
+      authDomain: "registro-socios-residentes.firebaseapp.com",
+      databaseURL:
+        "https://registro-socios-residentes-default-rtdb.firebaseio.com/",
+      projectId: "registro-socios-residentes",
+      storageBucket: "registro-socios-residentes.firebasestorage.app",
+      messagingSenderId: "591939707310",
+      appId: "1:591939707310:web:bdc858100b3ef3c8c0683f",
+      measurementId: "G-WD9VVT8WXW",
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+  </script>
+  <!-- <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
 </html>

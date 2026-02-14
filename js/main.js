@@ -19,6 +19,33 @@ const modalVerificacion = document.getElementById("modal-verificacion");
 const modalError = document.getElementById("modal-error");
 const codeInputs = document.querySelectorAll(".code-input");
 
+// --- CONFIGURACIÓN DE FECHAS ---
+// Formato: AAAA-MM-DDTHH:mm:ss
+// Puede ajustar estas fechas según lo necesite
+const FECHA_INICIO = new Date("2026-01-01T00:00:00");
+const FECHA_FIN = new Date("2026-01-31T23:59:59");
+
+// --- VERIFICACIÓN DE PLAZO ---
+function verificarPlazo() {
+  const ahora = new Date();
+  const seccionFormulario = document.getElementById("seccion-formulario");
+  const seccionCerrado = document.getElementById("seccion-cerrado");
+
+  // Si no existen los elementos, no hacemos nada (protección)
+  if (!seccionFormulario || !seccionCerrado) return;
+
+  if (ahora >= FECHA_INICIO && ahora <= FECHA_FIN) {
+    // DENTRO DEL PLAZO: Mostrar formulario, ocultar mensaje de cerrado
+    seccionFormulario.style.display = "block";
+    seccionCerrado.style.display = "none";
+  } else {
+    // FUERA DEL PLAZO: Ocultar formulario, mostrar mensaje de cerrado
+    seccionFormulario.style.display = "none";
+    seccionCerrado.style.display = "block";
+  }
+}
+
+
 // Cargar registros desde localStorage al iniciar
 function inicializar() {
   console.log("Intentando conectar a Firebase...");
@@ -187,15 +214,14 @@ function renderizarTabla() {
         (registro) => `
                     <tr>
                         <td><strong>${obtenerNombreCompleto(
-                          registro
-                        )}</strong></td>
+          registro
+        )}</strong></td>
                         <td>${registro.celular}</td>
                         <td>${obtenerBadgeGenero(registro.genero)}</td>
                         <td>${registro.dni}</td>
                         <td>
-                            <button class="btn-edit" onclick="solicitarVerificacion('${
-                              registro.id
-                            }')">
+                            <button class="btn-edit" onclick="solicitarVerificacion('${registro.id
+          }')">
                                 ✏️ Editar
                             </button>
                         </td>
@@ -510,4 +536,7 @@ modalVerificacion.addEventListener("click", function (e) {
 });
 
 // Inicializar al cargar la página
-document.addEventListener("DOMContentLoaded", inicializar);
+document.addEventListener("DOMContentLoaded", () => {
+  inicializar();
+  verificarPlazo();
+});
